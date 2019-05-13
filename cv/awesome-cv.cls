@@ -569,7 +569,7 @@
 
 % Define an environment for synopsis
 \newenvironment{cvsynopsis}{%
-  \vspace{\acvSectionContentTopSkip}
+  %\vspace{\acvSectionContentTopSkip}
   \begin{justify}
 }{%
   \end{justify}
@@ -577,7 +577,7 @@
 
 % Define an environment for cventries
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
+  %\vspace{\acvSectionContentTopSkip}
   \begin{center}
 }{%
   \end{center}
@@ -585,7 +585,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<tech>}
 \newcommand*{\cventry}[6]{%
-  \vspace{-2.0mm}
+  \vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -617,7 +617,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventrythree}[4]{%
-  \vspace{-2.0mm}
+  \vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -631,7 +631,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position1>}{<position2>}{<title>}{<location>}{<date1>}{<date2>}{<description>}{<details>}{<tech>}
 \newcommand*{\cventryfour}[9]{%
-  \vspace{-2.0mm}
+  \vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -650,7 +650,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<details>}{<tech>}
 \newcommand*{\cventryfive}[7]{%
-  \vspace{-2.0mm}
+  \vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -721,7 +721,7 @@
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
+  \vspace{0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
