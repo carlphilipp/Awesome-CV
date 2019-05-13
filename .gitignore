@@ -11,7 +11,7 @@
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
-<<<<<<< HEAD
+*.gz
 
 ### Editor ###
 ## Vim & Emacs temp files:
