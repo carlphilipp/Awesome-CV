@@ -139,7 +139,7 @@
 % Awesome colors
 \definecolor{awesome-emerald}{HTML}{00A388}
 \definecolor{awesome-skyblue}{HTML}{0395DE}
-\definecolor{awesome-violet}{HTML}{3700B3}
+\definecolor{awesome-violet}{HTML}{3366cc}
 \definecolor{awesome-red}{HTML}{DC3522}
 \definecolor{awesome-pink}{HTML}{EF4089}
 \definecolor{awesome-orange}{HTML}{FF6138}
@@ -207,6 +207,7 @@
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 \newcommand*{\descriptionsmallstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\tech}[1]{{\fontsize{8pt}{2em}\bodyfontlight\upshape\color{text} \textit{#1}}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -582,8 +583,8 @@
   \end{center}
 }
 % Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[5]{%
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<tech>}
+\newcommand*{\cventry}[6]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -592,7 +593,8 @@
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\tabularnewline
+    \multicolumn{2}{L{\textwidth}}{\tech{#6}}
   \end{tabular*}%
 }
 
@@ -627,8 +629,8 @@
 }
 
 % Define an entry of cv information
-% Usage: \cventry{<position1>}{<position2>}{<title>}{<location>}{<date1>}{<date2>}{<description>}{<details>}
-\newcommand*{\cventryfour}[8]{%
+% Usage: \cventry{<position1>}{<position2>}{<title>}{<location>}{<date1>}{<date2>}{<description>}{<details>}{<tech>}
+\newcommand*{\cventryfour}[9]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -640,13 +642,14 @@
       	\entrypositionstyle{#2} & \entrydatestyle{#6} \\
       }
       \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#7}}\tabularnewline
-      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}
+      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}\tabularnewline
+      \multicolumn{2}{L{\textwidth}}{\tech{#9}}
   \end{tabular*}%
 }
 
 % Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<details>}
-\newcommand*{\cventryfive}[6]{%
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<details>}{<tech>}
+\newcommand*{\cventryfive}[7]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -656,7 +659,8 @@
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\tabularnewline
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}\tabularnewline
+    \multicolumn{2}{L{\textwidth}}{\tech{#7}}
   \end{tabular*}%
 }
 
