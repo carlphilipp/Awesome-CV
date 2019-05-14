@@ -207,6 +207,7 @@
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 \newcommand*{\descriptionsmallstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\descriptionsmallsmallstyle}[1]{{\doublespacing\fontsize{6pt}{0.2em}\selectfont #1}}
 \newcommand*{\tech}[1]{{\fontsize{8pt}{2em}\bodyfontlight\upshape\color{text} \textit{#1}}}
 
 % For elements of subentry
@@ -585,7 +586,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<tech>}
 \newcommand*{\cventry}[6]{%
-  \vspace{0mm}
+  %\vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -601,7 +602,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position1>}{<position2>}{<title>}{<location>}{<date1>}{<date2>}{<description>}
 \newcommand*{\cventrytwo}[7]{%
-  \vspace{-2.0mm}
+  %\vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -617,7 +618,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventrythree}[4]{%
-  \vspace{0mm}
+  %\vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -631,7 +632,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position1>}{<position2>}{<title>}{<location>}{<date1>}{<date2>}{<description>}{<details>}{<tech>}
 \newcommand*{\cventryfour}[9]{%
-  \vspace{0mm}
+  %\vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -650,7 +651,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<details>}{<tech>}
 \newcommand*{\cventryfive}[7]{%
-  \vspace{0mm}
+  %\vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -665,14 +666,15 @@
 }
 
 % Define an entry of project
-% Usage: \cventry{<project>}{<name>}{<date>}{<description>}
-\newcommand*{\projectentry}[4]{%
-  \vspace{-2.0mm}
+% Usage: \projectentry{<project>}{<name>}{<date>}{<description>}
+\newcommand*{\projectentry}[5]{%
+  %\vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
       \entrytitlestyle{#2} \entrypositionstyle{#1} & \entrydatestyle{#3} \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#4}}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#4}} \\
+   	\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
 
@@ -720,8 +722,8 @@
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{0mm}
+  %\vspace{\acvSectionContentTopSkip}
+  %\vspace{0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
@@ -743,6 +745,19 @@
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
+}{%
+  \end{itemize}
+  \end{justify}
+  \vspace{-4.0mm}
+}
+
+% Define an environment for project details
+\newenvironment{projectdetails}{%
+  \vspace{-2mm}
+  \begin{justify}
+  \begin{itemize}[leftmargin=0ex, nosep, noitemsep]
+    \fontsize{7pt}{0.2em}\selectfont\setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{}
 }{%
   \end{itemize}
   \end{justify}
