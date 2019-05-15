@@ -402,7 +402,6 @@
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
-
 %-------------------------------------------------------------------------------
 %                Commands for elements of CV structure
 %-------------------------------------------------------------------------------
@@ -584,41 +583,29 @@
 }{%
   \end{center}
 }
-% Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<tech>}
-\newcommand*{\cventry}[6]{%
-  %\vspace{0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\tabularnewline
-    \multicolumn{2}{L{\textwidth}}{\tech{#6}}
-  \end{tabular*}%
-}
 
 % Define an entry of cv information
-% Usage: \cventry{<position1>}{<position2>}{<title>}{<location>}{<date1>}{<date2>}{<description>}
-\newcommand*{\cventrytwo}[7]{%
-  %\vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#5} \\}
-      {\entrytitlestyle{#3} & \entrylocationstyle{#4} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#5} \\
-      \entrypositionstyle{#2} & \entrydatestyle{#6} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#7}}
-  \end{tabular*}%
+% Usage: \cventry{<company>}{<position>}{<location>}{<date>}{<description>}{<details>}<tech>}
+\newcommand*{\experienceentry}[7]{%
+	\setlength\tabcolsep{0pt}
+  	\setlength{\extrarowheight}{0pt}
+  	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+   		\entrytitlestyle{#1} & \entrylocationstyle{#3} \\
+      	\entrypositionstyle{#2} & \entrydatestyle{#4} \\      	
+      	\multicolumn{2}{L{\textwidth}}{
+      		\ifempty{#5}
+      			{\descriptionstyle{#6}}
+      			{\descriptionstyle{#5}\linebreak
+      			\descriptionstyle{#6}
+      			}
+      	}\\
+      	\multicolumn{2}{L{\textwidth}}{\tech{#7}}
+  	\end{tabular*}%
 }
 
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventrythree}[4]{%
+\newcommand*{\educationentry}[4]{%
   %\vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -632,7 +619,7 @@
 
 % Define an entry of cv information
 % Usage: \cventry{<position1>}{<position2>}{<title>}{datetotal}{<location>}{<date1>}{<date2>}{<description>}{<details>}{<tech>}
-\newcommand*{\cventryfour}[9]{%
+\newcommand*{\experienceentryextra}[9]{%
   %\vspace{0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -644,21 +631,6 @@
       \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}\tabularnewline
       \multicolumn{2}{L{\textwidth}}{\tech{#9}}\tabularnewline
   \end{tabular*}%
-}
-
-% Define an entry of cv information
-% Usage: \cventryfive{<job>}{<organization>}{datetotal}{<location>}{<date>}{<description>}{<details>}{<tech>}
-\newcommand*{\cventryfive}[7]{%
-  	%\vspace{0mm}
-	\setlength\tabcolsep{0pt}%
-  	\setlength{\extrarowheight}{0pt}%
-  	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}%
-      	\entrytitlestyle{#2} & \entrylocationstyle{#3} \\%
-      	\entrypositionstyle{#1} & \entrydatestyle{#4} \\%
-    		\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\tabularnewline%
-    		\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}\tabularnewline%
-    		\multicolumn{2}{L{\textwidth}}{\tech{#7}}\\%
-  	\end{tabular*}%
 }
 
 % Define an entry of project
