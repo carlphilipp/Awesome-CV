@@ -598,7 +598,7 @@
       			{\descriptionstyle{#5}\linebreak
       			\descriptionstyle{#6}
       			}
-      	}\\
+      	}\\\tabularnewline
       	\multicolumn{2}{L{\textwidth}}{\tech{#7}}
   	\end{tabular*}%
 }
@@ -628,7 +628,7 @@
       	\entrypositionstyle{#1} & \entrydatestyle{#5} \\
       	\entrypositionstyle{#2} & \entrydatestyle{#6} \\
       \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#7}}\tabularnewline
-      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}\tabularnewline
+      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}\tabularnewline\tabularnewline
       \multicolumn{2}{L{\textwidth}}{\tech{#9}}\tabularnewline
   \end{tabular*}%
 }
@@ -640,9 +640,9 @@
   	\setlength\tabcolsep{0pt}
   	\setlength{\extrarowheight}{0pt}
   	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    		\entrytitlestyle{#2} \entrypositionstyle{#1} & \entrydatestyle{#3} \\
-    		\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#4}} \\
-   		\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+    		\entrytitlestyle{#2} \entrypositionstyle{#1} & \entrydatestyle{#3} \tabularnewline
+    		\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#4}} \tabularnewline
+   			\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   	\end{tabular*}%
 }
 
@@ -721,7 +721,7 @@
 
 % Define an environment for project details
 \newenvironment{projectdetails}{%
-  \vspace{-2mm}
+  \vspace{-2.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=0ex, nosep, noitemsep]
     \fontsize{7pt}{0.2em}\selectfont\setlength{\parskip}{0pt}
@@ -729,7 +729,7 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  %\vspace{-4.0mm}
 }
 
 
